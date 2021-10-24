@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ConstruDelasConsole
 {
@@ -6,7 +7,6 @@ namespace ConstruDelasConsole
     {
         static void Main(string[] args)
         {
-
             // ATIVIDADE 1
             /** dado os tipos de conversões e os comandos para mostrar e ler os dados na tela,
                 faça um programa para caputar três números(int) separados por vírgula, e no final mostre o
@@ -19,7 +19,8 @@ namespace ConstruDelasConsole
             var numerosArray = numeros.Split(',');
             int soma = 0;
 
-            foreach (string item in numerosArray) {
+            foreach (string item in numerosArray)
+            {
 
                 soma += int.Parse(item);
             }
@@ -42,7 +43,7 @@ namespace ConstruDelasConsole
 
             var desconto = double.Parse(valor) * 0.05;
 
-            Console.WriteLine("O valor de desconto do seu produto (" + nome +") é de " + desconto);
+            Console.WriteLine("O valor de desconto do seu produto (" + nome + ") é de " + desconto);
 
             //ATIVIDADE 3
             /** faça um programa que solicite 3 números faça a multiplicação dos mesmos e,
@@ -89,7 +90,8 @@ namespace ConstruDelasConsole
             Console.WriteLine("Digite o seu nome");
             nome = Console.ReadLine().ToLower();
 
-            if (nome == "leo") {
+            if (nome == "leo")
+            {
                 Console.WriteLine("Olá, Leo!");
             }
             else if (nome == "dirceu")
@@ -99,12 +101,13 @@ namespace ConstruDelasConsole
             else if (nome == "thais")
             {
                 Console.WriteLine("Nossa, Thais, que vestido lindo!");
-            }    
+            }
             else
             {
                 Console.WriteLine("Opção inválida.");
             }
 
+            // ATIVIDADE 5
             /** faça um programa para calcular a tabuada do número que o usuário digitar.
                 no programa o usuário vai digitar o número da tabuada e a quantidade de números a
                 calcular. o resultado final é para mostrar exemplo X * Y = ZZ para todos os números
@@ -122,6 +125,47 @@ namespace ConstruDelasConsole
                 var resultado = tabuada * inicio;
                 Console.WriteLine(tabuada + " * " + inicio + " = " + resultado);
                 inicio++;
+            }
+
+            // ATIVIDADE 6
+            /** faça um programa que solicite o nome de 3 alunos e 4 notas para eles
+             * (ou seja, 4 notas para cada um) e calcule a média das notas.
+             * no final do programa, mostre um relatório da seguinte forma:
+             * Aluno: xxx, média: ?, notas: (?,?,?,?), Status: Aprovado ou Reprovado (aprovado média > 5)
+            **/
+
+            List<string> nomesAlunos = new List<string>();
+            List<List<double>> notasDosAlunos = new List<List<double>>();
+
+
+            for (int i = 1; i <= 4; i++)
+            {
+                Console.WriteLine($"Digite o nome do {i}º aluno(a):");
+                nomesAlunos.Add(Console.ReadLine());
+
+                var notas = new List<double>();
+                for (int x = 1; x <= 4; x++)
+                {
+                    Console.WriteLine($"Digite a {x}º nota do aluno(a) {nomesAlunos[i - 1]}");
+                    double nota = Convert.ToDouble("0" + Console.ReadLine());
+                    notas.Add(nota);
+                }
+                notasDosAlunos.Add(notas);
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                double somanotas = 0;
+                var notas = notasDosAlunos[i];
+                foreach (var nota in notas)
+                {
+                    somanotas += nota;
+                }
+
+                double media = somanotas / notas.Count;
+                string status = media > 5 ? "Aprovado" : "Reprovado";
+
+                Console.WriteLine($"Aluno(a): {nomesAlunos[i]}, média: {media.ToString("#.##")}, notas: ({string.Join(",", notas.ToArray())}), Status: {status}");
             }
 
         }
