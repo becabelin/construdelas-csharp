@@ -13,7 +13,8 @@ namespace ConstruDelasConsole
                 resultado da soma dos mesmos
             **/
 
-            Console.WriteLine("Digite os números separados por ','");
+            Console.WriteLine("ATIVIDADE 1: Somar números!" +
+                "\nDigite os números separados por ','");
 
             string numeros = Console.ReadLine();
             var numerosArray = numeros.Split(',');
@@ -35,7 +36,8 @@ namespace ConstruDelasConsole
                "O valor calculado foi x% do produto y"
             **/
 
-            Console.WriteLine("Digite o nome do seu produto");
+            Console.WriteLine("ATIVIDADE 2: Calcular o desconto de 5% em um produto" +
+                "\nDigite o nome do seu produto");
             string nome = Console.ReadLine().ToLower();
 
             Console.WriteLine("Digite o valor do seu produto");
@@ -53,7 +55,8 @@ namespace ConstruDelasConsole
                 se não, mostre "Infelizmente você perdeu"
             **/
 
-            Console.WriteLine("Digite o primeiro número");
+            Console.WriteLine("ATIVIDADE 3: Multiplicar 3 números para tentar tirar o número premiado" +
+                "\nDigite o primeiro número");
             var primeironumero = Console.ReadLine();
             Console.WriteLine("Digite o segundo número");
             var segundonumero = Console.ReadLine();
@@ -87,7 +90,8 @@ namespace ConstruDelasConsole
                 caso não for nenhum, mostre "Opção inválida."
             **/
 
-            Console.WriteLine("Digite o seu nome");
+            Console.WriteLine("ATIVIDADE 4: Colocar o nome certo para sair uma frase" +
+                "\nDigite o seu nome");
             nome = Console.ReadLine().ToLower();
 
             if (nome == "leo")
@@ -113,7 +117,8 @@ namespace ConstruDelasConsole
                 calcular. o resultado final é para mostrar exemplo X * Y = ZZ para todos os números
             **/
 
-            Console.WriteLine("Digite o número que você quer multiplicar");
+            Console.WriteLine("ATIVIDADE 5: Calcular a tabuada de qualquer número em qualquer quantidade" +
+                "\nDigite o número que você quer multiplicar");
             var tabuada = int.Parse(Console.ReadLine());
             Console.WriteLine("Quantas vezes você quer calcular?");
             var numerodevezes = int.Parse(Console.ReadLine());
@@ -135,37 +140,41 @@ namespace ConstruDelasConsole
             **/
 
             List<string> nomesAlunos = new List<string>();
-            List<List<double>> notasDosAlunos = new List<List<double>>();
+            List<string> notasDosAlunos = new List<string>();
+            List<string> matriculaDosAlunos = new List<string>();
 
+            int qtd = 3;
 
-            for (int i = 1; i <= 4; i++)
+            for (int i = 1; i <= qtd; i++)
             {
-                Console.WriteLine($"Digite o nome do {i}º aluno(a):");
+                Console.WriteLine($"ATIVIDADE 6: Pegar os dados de 3 alunos e dizer se foram aprovados" +
+                    $"\nDigite o nome do {i}º aluno(a):");
                 nomesAlunos.Add(Console.ReadLine());
+                var nomeAluno = nomesAlunos[i - 1];
 
-                var notas = new List<double>();
-                for (int x = 1; x <= 4; x++)
-                {
-                    Console.WriteLine($"Digite a {x}º nota do aluno(a) {nomesAlunos[i - 1]}");
-                    double nota = Convert.ToDouble("0" + Console.ReadLine());
-                    notas.Add(nota);
-                }
+                Console.WriteLine($"Digite a matricula do(a) {nomeAluno}:");
+                matriculaDosAlunos.Add(Console.ReadLine());
+
+                Console.WriteLine($"Digite as 4 notas do aluno(a) {nomeAluno} separados por ','");
+                string notas = Console.ReadLine();
+
                 notasDosAlunos.Add(notas);
             }
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < qtd; i++)
             {
                 double somanotas = 0;
-                var notas = notasDosAlunos[i];
+                var notasSeparadasPorVirgula = notasDosAlunos[i];
+                var notas = notasSeparadasPorVirgula.Split(',');
                 foreach (var nota in notas)
                 {
-                    somanotas += nota;
+                    somanotas += Convert.ToDouble("0" + nota);
                 }
 
-                double media = somanotas / notas.Count;
+                double media = somanotas / notas.Length;
                 string status = media > 5 ? "Aprovado" : "Reprovado";
 
-                Console.WriteLine($"Aluno(a): {nomesAlunos[i]}, média: {media.ToString("#.##")}, notas: ({string.Join(",", notas.ToArray())}), Status: {status}");
+                Console.WriteLine($"Aluno(a): {nomesAlunos[i]}, matrícula: {matriculaDosAlunos[i]}, notas: ({string.Join(",", notas)}), média: {media.ToString("#.##")}, status: {status}");
             }
 
         }
