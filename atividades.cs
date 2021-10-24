@@ -9,19 +9,22 @@ namespace ConstruDelasConsole
 
             // ATIVIDADE 1
             /* dado os tipos de conversões e os comandos para mostrar e ler os dados na tela,
-            * faça um programa para caputar dois números(int), e no final mostre o
+            * faça um programa para caputar três números(int) separados por vírgula, e no final mostre o
             * resultado da soma dos mesmos
             */
 
-            Console.WriteLine("Digite um número");
-            var numero1 = Console.ReadLine();
+            Console.WriteLine("Digite os números separados por ','");
 
-            Console.WriteLine("Digite outro número");
-            var numero2 = Console.ReadLine();
+            string numeros = Console.ReadLine();
+            var numerosArray = numeros.Split(',');
+            int soma = 0;
 
-            var somanumeros = int.Parse(numero1) + int.Parse(numero2);
+            foreach (string item in numerosArray) {
 
-            Console.WriteLine("A soma de " + numero1 + " e " + numero2 + " é: " + somanumeros);
+                soma += int.Parse(item);
+            }
+
+            Console.WriteLine($"A soma dos números é: {soma}");
 
 
             // ATIVIDADE 2
