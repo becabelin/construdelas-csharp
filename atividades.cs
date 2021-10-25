@@ -1,19 +1,20 @@
-using System;
+Ôªøusing System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace ConstruDelasConsole
 {
-    class atividades
+    class Atividades
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // ATIVIDADE 1
-            /** dado os tipos de conversıes e os comandos para mostrar e ler os dados na tela,
-                faÁa um programa para caputar trÍs n˙meros(int) separados por vÌrgula, e no final mostre o
+            /** dado os tipos de convers√µes e os comandos para mostrar e ler os dados na tela,
+                fa√ßa um programa para caputar tr√™s n√∫meros(int) separados por v√≠rgula, e no final mostre o
                 resultado da soma dos mesmos
                 
-                Console.WriteLine("ATIVIDADE 1: Somar n˙meros!" +
-                "\nDigite os n˙meros separados por ','");
+                Console.WriteLine("ATIVIDADE 1: Somar n√∫meros!" +
+                "\nDigite os n√∫meros separados por ','");
 
             string numeros = Console.ReadLine();
             var numerosArray = numeros.Split(',');
@@ -25,12 +26,12 @@ namespace ConstruDelasConsole
                 soma += int.Parse(item);
             }
 
-            Console.WriteLine($"A soma dos n˙meros È: {soma}");
+            Console.WriteLine($"A soma dos n√∫meros √©: {soma}");
 
 
             // ATIVIDADE 2
-            /** faÁa um programa que leia o nome e o valor do produto digitado, apÛs digitar,
-                faÁa o c·lculo de 5% sobre o valor do produto, no final do programa mostre a
+            /** fa√ßa um programa que leia o nome e o valor do produto digitado, ap√≥s digitar,
+                fa√ßa o c√°lculo de 5% sobre o valor do produto, no final do programa mostre a
                 mensagem:
                 "O valor calculado foi x% do produto y"
  
@@ -43,49 +44,49 @@ namespace ConstruDelasConsole
 
            var desconto = double.Parse(valor) * 0.05;
 
-           Console.WriteLine("O valor de desconto do seu produto (" + nome + ") È de " + desconto.ToString("#.##"));
+           Console.WriteLine("O valor de desconto do seu produto (" + nome + ") √© de " + desconto.ToString("#.##"));
 
            //ATIVIDADE 3
-           /** faÁa um programa que solicite 3 n˙meros faÁa a multiplicaÁ„o dos mesmos e,
-               no resultado final, verifique se este n˙mero È maior que 10 e menor que 20 ou
+           /** fa√ßa um programa que solicite 3 n√∫meros fa√ßa a multiplica√ß√£o dos mesmos e,
+               no resultado final, verifique se este n√∫mero √© maior que 10 e menor que 20 ou
                maior que 100 e menor que 200, ou maior quem 1000 e menor que 2000
-               caso seja verdadeira a condiÁ„o, mostre a mensagem = "Sim, È verdade, vocÍ achou o n˙mero premiado!"
-               se n„o, mostre "Infelizmente vocÍ perdeu"
+               caso seja verdadeira a condi√ß√£o, mostre a mensagem = "Sim, √© verdade, voc√™ achou o n√∫mero premiado!"
+               se n√£o, mostre "Infelizmente voc√™ perdeu"
 
-            Console.WriteLine("\nATIVIDADE 3: Multiplicar 3 n˙meros para tentar tirar o n˙mero premiado" +
-                "\nDigite o primeiro n˙mero");
+            Console.WriteLine("\nATIVIDADE 3: Multiplicar 3 n√∫meros para tentar tirar o n√∫mero premiado" +
+                "\nDigite o primeiro n√∫mero");
 
             var primeironumero = Console.ReadLine();
-            Console.WriteLine("Digite o segundo n˙mero");
+            Console.WriteLine("Digite o segundo n√∫mero");
             var segundonumero = Console.ReadLine();
-            Console.WriteLine("Digite o terceiro n˙mero");
+            Console.WriteLine("Digite o terceiro n√∫mero");
             var terceironumero = Console.ReadLine();
 
             var multiplicacao = int.Parse(primeironumero) * int.Parse(segundonumero) * int.Parse(terceironumero);
 
             if (multiplicacao > 10 && multiplicacao < 20)
             {
-                Console.WriteLine("VocÍ tirou " + multiplicacao + ". VocÍ achou o n˙mero premiado!");
+                Console.WriteLine("Voc√™ tirou " + multiplicacao + ". Voc√™ achou o n√∫mero premiado!");
             }
             else if (multiplicacao > 100 && multiplicacao < 200)
             {
-                Console.WriteLine("VocÍ tirou " + multiplicacao + ". VocÍ achou o n˙mero premiado!");
+                Console.WriteLine("Voc√™ tirou " + multiplicacao + ". Voc√™ achou o n√∫mero premiado!");
             }
             else if (multiplicacao > 1000 && multiplicacao < 2000)
             {
-                Console.WriteLine("VocÍ tirou " + multiplicacao + ". VocÍ achou o n˙mero premiado!");
+                Console.WriteLine("Voc√™ tirou " + multiplicacao + ". Voc√™ achou o n√∫mero premiado!");
             }
             else
             {
-                Console.WriteLine("VocÍ tirou " + multiplicacao + ". Infelizmente vocÍ perdeu.");
+                Console.WriteLine("Voc√™ tirou " + multiplicacao + ". Infelizmente voc√™ perdeu.");
             }
 
             //ATIVIDADE 4
-            /** faÁa um programa que peÁa para digitar um nome
-                caso o nome digitado for Leo mostre "Ol·, Leo!"
-                caso o nome digitado for Dirceu mostre "Opa, e aÌ, Dirceu?"
+            /** fa√ßa um programa que pe√ßa para digitar um nome
+                caso o nome digitado for Leo mostre "Ol√°, Leo!"
+                caso o nome digitado for Dirceu mostre "Opa, e a√≠, Dirceu?"
                 caso o nome digitado for Thais mostre "Nossa, Thais, que vestido lindo!"
-                caso n„o for nenhum, mostre "OpÁ„o inv·lida."
+                caso n√£o for nenhum, mostre "Op√ß√£o inv√°lida."
 
             Console.WriteLine("\nATIVIDADE 4: Colocar Leo, Dirceu ou Thais" +
                 "\nDigite o seu nome");
@@ -93,11 +94,11 @@ namespace ConstruDelasConsole
 
             if (nome == "leo")
             {
-                Console.WriteLine("Ol·, Leo!");
+                Console.WriteLine("Ol√°, Leo!");
             }
             else if (nome == "dirceu")
             {
-                Console.WriteLine("Opa, e aÌ, Dirceu?");
+                Console.WriteLine("Opa, e a√≠, Dirceu?");
             }
             else if (nome == "thais")
             {
@@ -105,18 +106,18 @@ namespace ConstruDelasConsole
             }
             else
             {
-                Console.WriteLine("OpÁ„o inv·lida.");
+                Console.WriteLine("Op√ß√£o inv√°lida.");
             }
 
             // ATIVIDADE 5
-            /** faÁa um programa para calcular a tabuada do n˙mero que o usu·rio digitar.
-                no programa o usu·rio vai digitar o n˙mero da tabuada e a quantidade de n˙meros a
-                calcular. o resultado final È para mostrar exemplo X * Y = ZZ para todos os n˙meros
+            /** fa√ßa um programa para calcular a tabuada do n√∫mero que o usu√°rio digitar.
+                no programa o usu√°rio vai digitar o n√∫mero da tabuada e a quantidade de n√∫meros a
+                calcular. o resultado final √© para mostrar exemplo X * Y = ZZ para todos os n√∫meros
 
-            Console.WriteLine("\nATIVIDADE 5: Calcular a tabuada de qualquer n˙mero em qualquer quantidade" +
-                "\nDigite o n˙mero que vocÍ quer multiplicar");
+            Console.WriteLine("\nATIVIDADE 5: Calcular a tabuada de qualquer n√∫mero em qualquer quantidade" +
+                "\nDigite o n√∫mero que voc√™ quer multiplicar");
             var tabuada = int.Parse(Console.ReadLine());
-            Console.WriteLine("Quantas vezes vocÍ quer calcular?");
+            Console.WriteLine("Quantas vezes voc√™ quer calcular?");
             var numerodevezes = int.Parse(Console.ReadLine());
 
             int inicio = 1;
@@ -129,10 +130,10 @@ namespace ConstruDelasConsole
             }
 
             // ATIVIDADE 6
-            /** faÁa um programa que solicite o nome de 3 alunos e 4 notas para eles
-             * (ou seja, 4 notas para cada um) e calcule a mÈdia das notas.
-             * no final do programa, mostre um relatÛrio da seguinte forma:
-             * Aluno: xxx, mÈdia: ?, notas: (?,?,?,?), Status: Aprovado ou Reprovado (aprovado mÈdia > 5)
+            /** fa√ßa um programa que solicite o nome de 3 alunos e 4 notas para eles
+             * (ou seja, 4 notas para cada um) e calcule a m√©dia das notas.
+             * no final do programa, mostre um relat√≥rio da seguinte forma:
+             * Aluno: xxx, m√©dia: ?, notas: (?,?,?,?), Status: Aprovado ou Reprovado (aprovado m√©dia > 5)
 
             List<dynamic> alunos = new List<dynamic>();
 
@@ -141,7 +142,7 @@ namespace ConstruDelasConsole
 
             for (int i = 1; i <= qtd; i++)
             {
-                Console.WriteLine($"Digite o nome do {i}∫ aluno(a):");
+                Console.WriteLine($"Digite o nome do {i}¬∫ aluno(a):");
                 nome = Console.ReadLine();
 
                 Console.WriteLine($"Digite a matricula de {nome}:");
@@ -171,23 +172,23 @@ namespace ConstruDelasConsole
                 double media = somanotas / notas.Length;
                 string status = media > 5 ? "Aprovado" : "Reprovado";
 
-                Console.WriteLine($"Aluno(a): {aluno.Nome}, matrÌcula: {aluno.Matricula}, notas: ({string.Join(",", notas)}), mÈdia: {media.ToString("#.##")}, status: {status}");
+                Console.WriteLine($"Aluno(a): {aluno.Nome}, matr√≠cula: {aluno.Matricula}, notas: ({string.Join(",", notas)}), m√©dia: {media.ToString("#.##")}, status: {status}");
             }
 
             // ATIVIDADE 7
-            /** faÁa um programa para venda de produtos, neste programa
-                vocÍ precisa capturar o nome do produto e o valor, depois
-                capturar o nome do comprador, o endereÁo do comprador e a quantidade
-                de produtos. apÛs capturar as informaÁıes, gere um objeto de pedido,
+            /** fa√ßa um programa para venda de produtos, neste programa
+                voc√™ precisa capturar o nome do produto e o valor, depois
+                capturar o nome do comprador, o endere√ßo do comprador e a quantidade
+                de produtos. ap√≥s capturar as informa√ß√µes, gere um objeto de pedido,
                 vinculando o usuario ao produto selecionado.
             
-                relatÛrio final:
-                Ol· senhor(a) XXX, o valor total de seu pedido È: R$ XXX e os itens s„o:
-                Quantidade XXX, Produto: XXX, Ser· entregue no endereÁo XXX
+                relat√≥rio final:
+                Ol√° senhor(a) XXX, o valor total de seu pedido √©: R$ XXX e os itens s√£o:
+                Quantidade XXX, Produto: XXX, Ser√° entregue no endere√ßo XXX
 
             Console.WriteLine("\nATIVIDADE 7: Programa para venda de produtos");
 
-            Console.WriteLine("Digite o produto que vocÍ selecionou:");
+            Console.WriteLine("Digite o produto que voc√™ selecionou:");
             string nomeProduto = Console.ReadLine();
 
             Console.WriteLine("Digite o valor desse produto:");
@@ -199,7 +200,7 @@ namespace ConstruDelasConsole
             Console.WriteLine("Digite o seu nome:");
             string nomeDoCliente = Console.ReadLine();
 
-            Console.WriteLine("Digite o seu endereÁo:");
+            Console.WriteLine("Digite o seu endere√ßo:");
             string enderecoDoCliente = Console.ReadLine();
 
             Pedido pedido = new Pedido()
@@ -218,27 +219,27 @@ namespace ConstruDelasConsole
                     ValorTotal = int.Parse(quantidadeProduto) * Convert.ToDouble(valorProduto)
              };
 
-            Console.WriteLine($"Ol·, {pedido.Cliente.Nome}, o valor total de seu pedido È de R$ {pedido.ValorTotal.ToString("#.##")}" +
-                $"\ne os produtos s„o: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
-                $"\ncom o preÁo de R$ {pedido.Produto.Valor}. Seu pedido ser· entregue no endereÁo {pedido.Cliente.Endereco}.");
+            Console.WriteLine($"Ol√°, {pedido.Cliente.Nome}, o valor total de seu pedido √© de R$ {pedido.ValorTotal.ToString("#.##")}" +
+                $"\ne os produtos s√£o: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
+                $"\ncom o pre√ßo de R$ {pedido.Produto.Valor}. Seu pedido ser√° entregue no endere√ßo {pedido.Cliente.Endereco}.");
 
             // ATIVIDADE 8
-            /** faÁa um programa para venda de produtos, neste programa vocÍ precisa
+            /** fa√ßa um programa para venda de produtos, neste programa voc√™ precisa
                 capturar o nome de 5 produtos e o valor dos mesmos. depois de capturar os produtos, capturar o nome e
-                endereÁo de 5 compradores, e tambÈm a quantidade de produtos.
-                apÛs capturar as informaÁıes gerar 5 pedidos com as informaÁıes.
+                endere√ßo de 5 compradores, e tamb√©m a quantidade de produtos.
+                ap√≥s capturar as informa√ß√µes gerar 5 pedidos com as informa√ß√µes.
  
-                relatÛrio final:
-                Ol·, XXX. O valor total de seu pedido È de R$ XXX
-                e os itens s„o XXX em quantidade XXX.
-                Seu pedido ser· entregue no endereÁo XXX.
+                relat√≥rio final:
+                Ol√°, XXX. O valor total de seu pedido √© de R$ XXX
+                e os itens s√£o XXX em quantidade XXX.
+                Seu pedido ser√° entregue no endere√ßo XXX.
 
                Console.WriteLine("\nATIVIDADE 8: Programa para venda de produtos com 5 clientes");
 
                List<Pedido> pedidos = new List<Pedido>();
                for (var contador = 0; contador <= 5; contador++)
                {
-                   Console.WriteLine("\nDigite o produto que vocÍ selecionou:");
+                   Console.WriteLine("\nDigite o produto que voc√™ selecionou:");
                    string nomeProduto = Console.ReadLine();
 
                    Console.WriteLine("\nDigite o valor desse produto:");
@@ -250,7 +251,7 @@ namespace ConstruDelasConsole
                    Console.WriteLine("\nDigite o seu nome:");
                    string nomeDoCliente = Console.ReadLine();
 
-                   Console.WriteLine("\nDigite o seu endereÁo:");
+                   Console.WriteLine("\nDigite o seu endere√ßo:");
                    string enderecoDoCliente = Console.ReadLine();
 
                    Pedido pedido = new Pedido()
@@ -274,31 +275,31 @@ namespace ConstruDelasConsole
 
                foreach (var pedido in pedidos)
                {
-                   Console.WriteLine($"\nOl·, {pedido.Cliente.Nome}, o valor total de seu pedido È de R$ {pedido.ValorTotal.ToString("#.##")}" +
-                   $"\ne os produtos s„o: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
-                   $"\ncom o preÁo de R$ {pedido.Produto.Valor}. Seu pedido ser· entregue no endereÁo {pedido.Cliente.Endereco}.");
+                   Console.WriteLine($"\nOl√°, {pedido.Cliente.Nome}, o valor total de seu pedido √© de R$ {pedido.ValorTotal.ToString("#.##")}" +
+                   $"\ne os produtos s√£o: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
+                   $"\ncom o pre√ßo de R$ {pedido.Produto.Valor}. Seu pedido ser√° entregue no endere√ßo {pedido.Cliente.Endereco}.");
 
                    Console.WriteLine($"-----------------------------------------");
                }
 
                // ATIVIDADE 9
-               /** Josevaldo È dono de uma cadeia de fast food.
-                   faÁa um programa que cadastre os ingredientes de um hamb˙rguer,
-                   que cadastre um hamb˙rguer selecionando os ingredientes
-                   e faÁa um pedido para um cliente selecionando os hamb˙rgueres.
+               /** Josevaldo √© dono de uma cadeia de fast food.
+                   fa√ßa um programa que cadastre os ingredientes de um hamb√∫rguer,
+                   que cadastre um hamb√∫rguer selecionando os ingredientes
+                   e fa√ßa um pedido para um cliente selecionando os hamb√∫rgueres.
                  
-                   no final do programa, mostre um relatÛrio com os clientes e seus pedidos
-                   com o detalhe sobre tudo, mostrando os hamb˙rgueres e os detalhes do hamb˙rguer
+                   no final do programa, mostre um relat√≥rio com os clientes e seus pedidos
+                   com o detalhe sobre tudo, mostrando os hamb√∫rgueres e os detalhes do hamb√∫rguer
                    
                    Ex:
                    Pedido do(a) XXX
-                   Ele escolheu os hamburgers
-                       - Gold Premium
+                   Ele escolheu os hamb√∫rgueres
+                       - Gold Premium (R$ 90.00)
                          - Salada
                          - Molho
                          - Carne
                          - Picles
-                       - Prata Gerge
+                       - Prata Gerge (R$ 110.00)
                          - Salada
                          - Molho
                          - Carne
@@ -306,13 +307,13 @@ namespace ConstruDelasConsole
                    Valor total de R$ 200 reais
                    ------------------------------------------
                    Pedido do(a) YYY
-                   Ele escolheu os hamburgers
-                       - Cearense
+                   Ele escolheu os hamb√∫rgueres
+                       - Cearense (R$ 130.00)
                          - Salada
                          - Molho
                          - Carne de sol
                          - Ovo
-                       - Prata Chicken
+                       - Prata Chicken R$ 100.00)
                          - Salada
                          - Molho
                          - Frango
@@ -321,6 +322,177 @@ namespace ConstruDelasConsole
                    Valor total de R$ 230 reais
                    **/
 
+            Console.WriteLine("\nATIVIDADE 9: Programa para venda de hamb√∫rgueres no fast food");
+
+            var estoqueDeProdutos = new List<Produto>();
+            var pedidos = new List<Pedido>();
+
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Ol√°! O que voc√™ deseja fazer?");
+                Console.WriteLine("Digite 1 para cadastrar produtos");
+                Console.WriteLine("Digite 2 para cadastrar um pedido");
+                Console.WriteLine("Digite 3 para mostrar o relat√≥rio");
+                Console.WriteLine("Digite 4 para mostrar o estoque");
+                Console.WriteLine("Digite 0 para mostrar sair");
+                var dado = Console.ReadLine();
+                if (dado.Trim() == "0") break;
+                if (dado.Trim() != "1" &&
+                    dado.Trim() != "2" &&
+                    dado.Trim() != "3" &&
+                    dado.Trim() != "4")
+                {
+                    Console.WriteLine("Op√ß√£o inv√°lida. Voltando para o in√≠cio em 5 segundos.");
+                    Thread.Sleep(5000); // 5 segundos
+                    continue;
+                }
+
+                switch (Convert.ToInt16(dado))
+                {
+                    case 1:
+                        cadastraProdutos(estoqueDeProdutos);
+                        break;
+                    case 2:
+                        pedidos.Add(cadastrarPedido(estoqueDeProdutos));
+                        break;
+                    case 3:
+                        mostraRelatorioDePedidos(pedidos);
+                        break;
+                    case 4:
+                        Console.Clear();
+                        mostrarEstoque(estoqueDeProdutos);
+                        Thread.Sleep(5000); // 5 segundos
+                        break;
+                }
+            }
+
+        }
+
+        private static void mostrarEstoque(List<Produto> produtos)
+        {
+            if (produtos.Count == 0)
+            {
+                Console.WriteLine("N√£o exitem produtos cadastrados no estoque");
+                return;
+            }
+
+            foreach (var produto in produtos)
+            {
+                Console.WriteLine($" {produto.Codigo} - {produto.Nome}");
+            }
+        }
+
+        private static void cadastraProdutos(List<Produto> produtos)
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Ol√°, bem vindo(a) ao cadastro de produtos.");
+                Console.WriteLine("Digite 1 para cadastrar um produto ou 0 para sair.");
+                var dado = Console.ReadLine();
+                if (dado.Trim() != "1") break;
+
+                produtos.Add(cadastrarProduto());
+            }
+        }
+
+        private static Produto cadastrarProduto()
+        {
+            Console.Clear();
+            var produto = new Produto();
+
+            try
+            {
+                Console.WriteLine($"Digite o c√≥digo do produto:");
+                produto.Codigo = Convert.ToInt16("0" + Console.ReadLine());
+
+                Console.WriteLine($"Digite o nome do produto:");
+                produto.Nome = Console.ReadLine();
+
+                Console.WriteLine($"Digite o valor do {produto.Nome}: ");
+                produto.Valor = Convert.ToDouble("0" + Console.ReadLine());
+            }
+            catch
+            {
+                return cadastrarProduto();
+            }
+
+            return produto;
+        }
+
+        private static void mostraRelatorioDePedidos(List<Pedido> pedidos)
+        {
+            Console.Clear();
+
+            if (pedidos.Count == 0)
+            {
+                Console.WriteLine($"N√£o existem produtos cadastrados");
+                Thread.Sleep(5000); // 5 segundos
+                return;
+            }
+
+            foreach (var pedido in pedidos)
+            {
+                Console.WriteLine($"Ol√°, senhor(a) {pedido.Cliente.Nome}, o valor total de seu pedido √© de: R$ {pedido.ValorTotal().ToString("#.##")}.");
+                Console.WriteLine($"Os itens s√£o:");
+
+                foreach (var produto in pedido.Produtos)
+                {
+                    Console.WriteLine($" - { produto.Nome}, Quantidade { produto.Quantidade}, Valor unit√°rio R${produto.Valor.ToString("#.##")}, Valor R${produto.ValorTotal().ToString("#.##")} ");
+                }
+
+                Console.WriteLine($"Seu pedido ser√° entregue no endere√ßo {pedido.Cliente.Endereco}");
+                Console.WriteLine($"----------------------------------------");
+            }
+
+
+            Thread.Sleep(15000); // 15 segundos
+        }
+
+        private static Pedido cadastrarPedido(List<Produto> produtos)
+        {
+            Console.Clear();
+
+            Pedido pedido = new Pedido() { Cliente = new Cliente() };
+
+            Console.WriteLine($"Digite o nome do cliente:");
+            pedido.Cliente.Nome = Console.ReadLine();
+
+            Console.WriteLine($"Ol√°, {pedido.Cliente.Nome}, digite o seu endere√ßo:");
+            pedido.Cliente.Endereco = Console.ReadLine();
+
+            pedido.Produtos = new List<Produto>();
+
+            while (true)
+            {
+                Console.Clear();
+
+                Console.WriteLine($"Segue a lista de produtos dispon√≠veis no estoque:");
+                mostrarEstoque(produtos);
+
+                Console.WriteLine($"Digite o c√≥digo do produto que deseja:");
+                var codigo = Convert.ToInt16("0" + Console.ReadLine());
+
+                var produto = produtos.Find(p => p.Codigo == codigo);
+                if (produto == null)
+                {
+                    Console.WriteLine($"C√≥digo de produto inv√°lido.");
+                    Thread.Sleep(2000); // 2 segundos
+                    continue;
+                }
+
+                Console.WriteLine($"Agora, {pedido.Cliente.Nome}, digite a quantidade que deseja de {produto.Nome}:");
+                produto.Quantidade = Convert.ToInt16("0" + Console.ReadLine());
+
+                pedido.Produtos.Add(produto);
+
+                Console.WriteLine("Digite 1 para adicionar um novo produto.");
+                var saida = Console.ReadLine();
+                if (saida.Trim() != "1") break;
+            }
+
+            return pedido;
         }
     }
 }

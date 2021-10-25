@@ -6,18 +6,18 @@ namespace ConstruDelasConsole
 {
     public class Pedido
     {
-        public Pedido()
-        {
-        }
-
         public Cliente Cliente { get; set; }
-        public Produto Produto { get; set; }
-        public int Quantidade { get; set; }
-        public double ValorTotal { get; set; }
+        public List<Produto> Produtos { get; set; }
 
-        internal void Add(Pedido pedido)
+        public double ValorTotal()
         {
-            throw new NotImplementedException();
+            double valorTotal = 0;
+            foreach (var produto in Produtos)
+            {
+                valorTotal += produto.Valor * produto.Quantidade;
+            }
+
+            return valorTotal;
         }
     }
 }
