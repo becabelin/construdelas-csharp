@@ -36,7 +36,7 @@ namespace ConstruDelasConsole
                "O valor calculado foi x% do produto y"
             **/
 
-            Console.WriteLine("ATIVIDADE 2: Calcular o desconto de 5% em um produto" +
+            Console.WriteLine("\nATIVIDADE 2: Calcular o desconto de 5% em um produto" +
                 "\nDigite o nome do seu produto");
             string nome = Console.ReadLine().ToLower();
 
@@ -45,7 +45,7 @@ namespace ConstruDelasConsole
 
             var desconto = double.Parse(valor) * 0.05;
 
-            Console.WriteLine("O valor de desconto do seu produto (" + nome + ") é de " + desconto);
+            Console.WriteLine("O valor de desconto do seu produto (" + nome + ") é de " + desconto.ToString("#.##"));
 
             //ATIVIDADE 3
             /** faça um programa que solicite 3 números faça a multiplicação dos mesmos e,
@@ -55,8 +55,9 @@ namespace ConstruDelasConsole
                 se não, mostre "Infelizmente você perdeu"
             **/
 
-            Console.WriteLine("ATIVIDADE 3: Multiplicar 3 números para tentar tirar o número premiado" +
+            Console.WriteLine("\nATIVIDADE 3: Multiplicar 3 números para tentar tirar o número premiado" +
                 "\nDigite o primeiro número");
+
             var primeironumero = Console.ReadLine();
             Console.WriteLine("Digite o segundo número");
             var segundonumero = Console.ReadLine();
@@ -90,7 +91,7 @@ namespace ConstruDelasConsole
                 caso não for nenhum, mostre "Opção inválida."
             **/
 
-            Console.WriteLine("ATIVIDADE 4: Colocar o nome certo para sair uma frase" +
+            Console.WriteLine("\nATIVIDADE 4: Colocar Leo, Dirceu ou Thais" +
                 "\nDigite o seu nome");
             nome = Console.ReadLine().ToLower();
 
@@ -117,7 +118,7 @@ namespace ConstruDelasConsole
                 calcular. o resultado final é para mostrar exemplo X * Y = ZZ para todos os números
             **/
 
-            Console.WriteLine("ATIVIDADE 5: Calcular a tabuada de qualquer número em qualquer quantidade" +
+            Console.WriteLine("\nATIVIDADE 5: Calcular a tabuada de qualquer número em qualquer quantidade" +
                 "\nDigite o número que você quer multiplicar");
             var tabuada = int.Parse(Console.ReadLine());
             Console.WriteLine("Quantas vezes você quer calcular?");
@@ -139,33 +140,35 @@ namespace ConstruDelasConsole
              * Aluno: xxx, média: ?, notas: (?,?,?,?), Status: Aprovado ou Reprovado (aprovado média > 5)
             **/
 
-            List<string> nomesAlunos = new List<string>();
-            List<string> notasDosAlunos = new List<string>();
-            List<string> matriculaDosAlunos = new List<string>();
+            List<dynamic> alunos = new List<dynamic>();
 
+            Console.WriteLine("\nATIVIDADE 6: Pegar os dados de 3 alunos e dizer se foram aprovados");
             int qtd = 3;
 
             for (int i = 1; i <= qtd; i++)
             {
-                Console.WriteLine($"ATIVIDADE 6: Pegar os dados de 3 alunos e dizer se foram aprovados" +
-                    $"\nDigite o nome do {i}º aluno(a):");
-                nomesAlunos.Add(Console.ReadLine());
-                var nomeAluno = nomesAlunos[i - 1];
+                Console.WriteLine($"Digite o nome do {i}º aluno(a):");
+                nome = Console.ReadLine();
 
-                Console.WriteLine($"Digite a matricula do(a) {nomeAluno}:");
-                matriculaDosAlunos.Add(Console.ReadLine());
+                Console.WriteLine($"Digite a matricula de {nome}:");
+                var matricula = Console.ReadLine();
 
-                Console.WriteLine($"Digite as 4 notas do aluno(a) {nomeAluno} separados por ','");
+                Console.WriteLine($"Digite as 4 notas de {nome} separados por ','");
                 string notas = Console.ReadLine();
 
-                notasDosAlunos.Add(notas);
+                alunos.Add(new
+                {
+                    Nome = nome,
+                    Matricula = matricula,
+                    Notas = notas
+                });
+
             }
 
-            for (int i = 0; i < qtd; i++)
+            foreach (var aluno in alunos)
             {
                 double somanotas = 0;
-                var notasSeparadasPorVirgula = notasDosAlunos[i];
-                var notas = notasSeparadasPorVirgula.Split(',');
+                var notas = aluno.Notas.Split(',');
                 foreach (var nota in notas)
                 {
                     somanotas += Convert.ToDouble("0" + nota);
@@ -174,10 +177,74 @@ namespace ConstruDelasConsole
                 double media = somanotas / notas.Length;
                 string status = media > 5 ? "Aprovado" : "Reprovado";
 
-                Console.WriteLine($"Aluno(a): {nomesAlunos[i]}, matrícula: {matriculaDosAlunos[i]}, notas: ({string.Join(",", notas)}), média: {media.ToString("#.##")}, status: {status}");
+                Console.WriteLine($"Aluno(a): {aluno.Nome}, matrícula: {aluno.Matricula}, notas: ({string.Join(",", notas)}), média: {media.ToString("#.##")}, status: {status}");
             }
 
-        }
+            // ATIVIDADE 7
+            /** faça um programa para venda de produtos, neste programa
+                você precisa capturar o nome do produto e o valor, depois
+                capturar o nome do comprador, o endereço do comprador e a quantidade
+                de produtos. após capturar as informações, gere um objeto de pedido,
+                vinculando o usuario ao produto selecionado.
+            
+                relatório final:
+                Olá senhor(a) XXX, o valor total de seu pedido é: R$ XXX e os itens são:
+                Quantidade XXX, Produto: XXX, Será entregue no endereço XXX
+            **/
 
+            Console.WriteLine("\nATIVIDADE 7: Programa para venda de produtos");
+
+            Console.WriteLine("Digite o produto que você selecionou:");
+            string nomeProduto = Console.ReadLine();
+
+            Console.WriteLine("Digite o valor desse produto:");
+            var valorProduto = Console.ReadLine();
+
+            Console.WriteLine("Digite a quantidade desse produto:");
+            var quantidadeProduto = Console.ReadLine();
+
+            Console.WriteLine("Digite o seu nome:");
+            string nomeDoCliente = Console.ReadLine();
+
+            Console.WriteLine("Digite o seu endereço:");
+            string enderecoDoCliente = Console.ReadLine();
+
+            Pedido pedido = new Pedido()
+            {
+                Produto = new Produto()
+                {
+                    Nome = nomeProduto,
+                    Valor = Convert.ToDouble(valorProduto)
+                },
+                Cliente = new Cliente()
+                {
+                    Nome = nomeDoCliente,
+                    Endereco = enderecoDoCliente,
+                },
+                    Quantidade = int.Parse(quantidadeProduto),
+                    ValorTotal = int.Parse(quantidadeProduto) * Convert.ToDouble(valorProduto)
+             };
+
+            Console.WriteLine($"Olá, {pedido.Cliente.Nome}, o valor total de seu pedido é de R$ {pedido.ValorTotal}" +
+                $"\ne os produtos são: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
+                $"\ncom o preço de R$ {pedido.Produto.Valor}. Seu pedido será entregue no endereço {pedido.Cliente.Endereco}.");
+
+            // ATIVIDADE 8
+            /** faça um programa para venda de produtos, neste programa você precisa
+                capturar o nome de 5 produtos e o valor dos mesmos. depois de capturar os produtos, capturar o nome e
+                endereço de 5 compradores, e também a quantidade de produtos.
+                após capturar as informações gerar 5 pedidos com as informações.
+ 
+                relatório final:
+                Olá, XXX. O valor total de seu pedido é de R$ XXX
+                e os itens são XXX em quantidade XXX.
+                Seu pedido será entregue no endereço XXX.
+            **/
+
+            Console.WriteLine("\nATIVIDADE 8: Programa para venda de produtos com 5 clientes");
+
+
+
+        }
     }
 }
