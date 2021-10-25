@@ -11,9 +11,6 @@ namespace ConstruDelasConsole
             /** dado os tipos de conversões e os comandos para mostrar e ler os dados na tela,
                 faça um programa para caputar três números(int) separados por vírgula, e no final mostre o
                 resultado da soma dos mesmos
-            **/
-
-            /** COMENTÁRIO DA QUESTÃO
                 
                 Console.WriteLine("ATIVIDADE 1: Somar números!" +
                 "\nDigite os números separados por ','");
@@ -33,13 +30,10 @@ namespace ConstruDelasConsole
 
             // ATIVIDADE 2
             /** faça um programa que leia o nome e o valor do produto digitado, após digitar,
-               faça o cálculo de 5% sobre o valor do produto, no final do programa mostre a
-               mensagem:
-               "O valor calculado foi x% do produto y"
-            **/
-
-            /** COMENTÁRIO DA QUESTÃO
-
+                faça o cálculo de 5% sobre o valor do produto, no final do programa mostre a
+                mensagem:
+                "O valor calculado foi x% do produto y"
+ 
            Console.WriteLine("\nATIVIDADE 2: Calcular o desconto de 5% em um produto" +
                "\nDigite o nome do seu produto");
            string nome = Console.ReadLine().ToLower();
@@ -57,9 +51,6 @@ namespace ConstruDelasConsole
                maior que 100 e menor que 200, ou maior quem 1000 e menor que 2000
                caso seja verdadeira a condição, mostre a mensagem = "Sim, é verdade, você achou o número premiado!"
                se não, mostre "Infelizmente você perdeu"
-           **/
-
-            /** COMENTÁRIO DA QUESTÃO
 
             Console.WriteLine("\nATIVIDADE 3: Multiplicar 3 números para tentar tirar o número premiado" +
                 "\nDigite o primeiro número");
@@ -95,9 +86,6 @@ namespace ConstruDelasConsole
                 caso o nome digitado for Dirceu mostre "Opa, e aí, Dirceu?"
                 caso o nome digitado for Thais mostre "Nossa, Thais, que vestido lindo!"
                 caso não for nenhum, mostre "Opção inválida."
-            **/
-
-            /** COMENTÁRIO DA QUESTÃO
 
             Console.WriteLine("\nATIVIDADE 4: Colocar Leo, Dirceu ou Thais" +
                 "\nDigite o seu nome");
@@ -124,9 +112,6 @@ namespace ConstruDelasConsole
             /** faça um programa para calcular a tabuada do número que o usuário digitar.
                 no programa o usuário vai digitar o número da tabuada e a quantidade de números a
                 calcular. o resultado final é para mostrar exemplo X * Y = ZZ para todos os números
-            **/
-
-            /** COMENTÁRIO DA QUESTÃO
 
             Console.WriteLine("\nATIVIDADE 5: Calcular a tabuada de qualquer número em qualquer quantidade" +
                 "\nDigite o número que você quer multiplicar");
@@ -148,9 +133,6 @@ namespace ConstruDelasConsole
              * (ou seja, 4 notas para cada um) e calcule a média das notas.
              * no final do programa, mostre um relatório da seguinte forma:
              * Aluno: xxx, média: ?, notas: (?,?,?,?), Status: Aprovado ou Reprovado (aprovado média > 5)
-            **/
-
-            /** COMENTÁRIO DA QUESTÃO
 
             List<dynamic> alunos = new List<dynamic>();
 
@@ -202,9 +184,6 @@ namespace ConstruDelasConsole
                 relatório final:
                 Olá senhor(a) XXX, o valor total de seu pedido é: R$ XXX e os itens são:
                 Quantidade XXX, Produto: XXX, Será entregue no endereço XXX
-            **/
-
-            /** COMENTÁRIO DA QUESTÃO
 
             Console.WriteLine("\nATIVIDADE 7: Programa para venda de produtos");
 
@@ -253,55 +232,95 @@ namespace ConstruDelasConsole
                 Olá, XXX. O valor total de seu pedido é de R$ XXX
                 e os itens são XXX em quantidade XXX.
                 Seu pedido será entregue no endereço XXX.
-            **/
 
-            Console.WriteLine("\nATIVIDADE 8: Programa para venda de produtos com 5 clientes");
+               Console.WriteLine("\nATIVIDADE 8: Programa para venda de produtos com 5 clientes");
 
-            List<Pedido> pedidos = new List<Pedido>();
-            for (var contador = 0; contador <= 5; contador++)
-            {
-                Console.WriteLine("\nDigite o produto que você selecionou:");
-                string nomeProduto = Console.ReadLine();
+               List<Pedido> pedidos = new List<Pedido>();
+               for (var contador = 0; contador <= 5; contador++)
+               {
+                   Console.WriteLine("\nDigite o produto que você selecionou:");
+                   string nomeProduto = Console.ReadLine();
 
-                Console.WriteLine("\nDigite o valor desse produto:");
-                var valorProduto = Console.ReadLine();
+                   Console.WriteLine("\nDigite o valor desse produto:");
+                   var valorProduto = Console.ReadLine();
 
-                Console.WriteLine("\nDigite a quantidade desse produto:");
-                var quantidadeProduto = Console.ReadLine();
+                   Console.WriteLine("\nDigite a quantidade desse produto:");
+                   var quantidadeProduto = Console.ReadLine();
 
-                Console.WriteLine("\nDigite o seu nome:");
-                string nomeDoCliente = Console.ReadLine();
+                   Console.WriteLine("\nDigite o seu nome:");
+                   string nomeDoCliente = Console.ReadLine();
 
-                Console.WriteLine("\nDigite o seu endereço:");
-                string enderecoDoCliente = Console.ReadLine();
+                   Console.WriteLine("\nDigite o seu endereço:");
+                   string enderecoDoCliente = Console.ReadLine();
 
-                Pedido pedido = new Pedido()
-                {
-                    Produto = new Produto()
-                    {
-                        Nome = nomeProduto,
-                        Valor = Convert.ToDouble(valorProduto)
-                    },
-                    Cliente = new Cliente()
-                    {
-                        Nome = nomeDoCliente,
-                        Endereco = enderecoDoCliente,
-                    },
-                    Quantidade = int.Parse(quantidadeProduto),
-                    ValorTotal = int.Parse(quantidadeProduto) * Convert.ToDouble(valorProduto)
-                };
+                   Pedido pedido = new Pedido()
+                   {
+                       Produto = new Produto()
+                       {
+                           Nome = nomeProduto,
+                           Valor = Convert.ToDouble(valorProduto)
+                       },
+                       Cliente = new Cliente()
+                       {
+                           Nome = nomeDoCliente,
+                           Endereco = enderecoDoCliente,
+                       },
+                       Quantidade = int.Parse(quantidadeProduto),
+                       ValorTotal = int.Parse(quantidadeProduto) * Convert.ToDouble(valorProduto)
+                   };
 
-                pedidos.Add(pedido);
-            }
+                   pedidos.Add(pedido);
+               }
 
-            foreach (var pedido in pedidos)
-            {
-                Console.WriteLine($"\nOlá, {pedido.Cliente.Nome}, o valor total de seu pedido é de R$ {pedido.ValorTotal.ToString("#.##")}" +
-                $"\ne os produtos são: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
-                $"\ncom o preço de R$ {pedido.Produto.Valor}. Seu pedido será entregue no endereço {pedido.Cliente.Endereco}.");
+               foreach (var pedido in pedidos)
+               {
+                   Console.WriteLine($"\nOlá, {pedido.Cliente.Nome}, o valor total de seu pedido é de R$ {pedido.ValorTotal.ToString("#.##")}" +
+                   $"\ne os produtos são: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
+                   $"\ncom o preço de R$ {pedido.Produto.Valor}. Seu pedido será entregue no endereço {pedido.Cliente.Endereco}.");
 
-                Console.WriteLine($"-----------------------------------------");
-            }
+                   Console.WriteLine($"-----------------------------------------");
+               }
+
+               // ATIVIDADE 9
+               /** Josevaldo é dono de uma cadeia de fast food.
+                   faça um programa que cadastre os ingredientes de um hambúrguer,
+                   que cadastre um hambúrguer selecionando os ingredientes
+                   e faça um pedido para um cliente selecionando os hambúrgueres.
+                 
+                   no final do programa, mostre um relatório com os clientes e seus pedidos
+                   com o detalhe sobre tudo, mostrando os hambúrgueres e os detalhes do hambúrguer
+                   
+                   Ex:
+                   Pedido do(a) XXX
+                   Ele escolheu os hamburgers
+                       - Gold Premium
+                         - Salada
+                         - Molho
+                         - Carne
+                         - Picles
+                       - Prata Gerge
+                         - Salada
+                         - Molho
+                         - Carne
+                         - Gergelim
+                   Valor total de R$ 200 reais
+                   ------------------------------------------
+                   Pedido do(a) YYY
+                   Ele escolheu os hamburgers
+                       - Cearense
+                         - Salada
+                         - Molho
+                         - Carne de sol
+                         - Ovo
+                       - Prata Chicken
+                         - Salada
+                         - Molho
+                         - Frango
+                         - Queijo
+                         - Bacon
+                   Valor total de R$ 230 reais
+                   **/
+
         }
     }
 }
