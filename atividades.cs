@@ -322,7 +322,7 @@ namespace ConstruDelasConsole
                    Valor total de R$ 230 reais
                    **/
 
-            Console.WriteLine("\nATIVIDADE 9: Programa para venda de hambúrgueres no fast food");
+            Console.WriteLine("ATIVIDADE 9: Programa para venda de hambúrgueres no fast food");
 
             var estoqueDeProdutos = new List<Produto>();
             var pedidos = new List<Pedido>();
