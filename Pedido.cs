@@ -15,5 +15,9 @@ namespace ConstruDelasConsole
         public int Quantidade { get; set; }
         public double ValorTotal { get; set; }
 
+        internal void Add(Pedido pedido)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

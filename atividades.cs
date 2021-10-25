@@ -13,7 +13,9 @@ namespace ConstruDelasConsole
                 resultado da soma dos mesmos
             **/
 
-            Console.WriteLine("ATIVIDADE 1: Somar números!" +
+            /** COMENTÁRIO DA QUESTÃO
+                
+                Console.WriteLine("ATIVIDADE 1: Somar números!" +
                 "\nDigite os números separados por ','");
 
             string numeros = Console.ReadLine();
@@ -36,24 +38,28 @@ namespace ConstruDelasConsole
                "O valor calculado foi x% do produto y"
             **/
 
-            Console.WriteLine("\nATIVIDADE 2: Calcular o desconto de 5% em um produto" +
-                "\nDigite o nome do seu produto");
-            string nome = Console.ReadLine().ToLower();
+            /** COMENTÁRIO DA QUESTÃO
 
-            Console.WriteLine("Digite o valor do seu produto");
-            var valor = Console.ReadLine();
+           Console.WriteLine("\nATIVIDADE 2: Calcular o desconto de 5% em um produto" +
+               "\nDigite o nome do seu produto");
+           string nome = Console.ReadLine().ToLower();
 
-            var desconto = double.Parse(valor) * 0.05;
+           Console.WriteLine("Digite o valor do seu produto");
+           var valor = Console.ReadLine();
 
-            Console.WriteLine("O valor de desconto do seu produto (" + nome + ") é de " + desconto.ToString("#.##"));
+           var desconto = double.Parse(valor) * 0.05;
 
-            //ATIVIDADE 3
-            /** faça um programa que solicite 3 números faça a multiplicação dos mesmos e,
-                no resultado final, verifique se este número é maior que 10 e menor que 20 ou
-                maior que 100 e menor que 200, ou maior quem 1000 e menor que 2000
-                caso seja verdadeira a condição, mostre a mensagem = "Sim, é verdade, você achou o número premiado!"
-                se não, mostre "Infelizmente você perdeu"
-            **/
+           Console.WriteLine("O valor de desconto do seu produto (" + nome + ") é de " + desconto.ToString("#.##"));
+
+           //ATIVIDADE 3
+           /** faça um programa que solicite 3 números faça a multiplicação dos mesmos e,
+               no resultado final, verifique se este número é maior que 10 e menor que 20 ou
+               maior que 100 e menor que 200, ou maior quem 1000 e menor que 2000
+               caso seja verdadeira a condição, mostre a mensagem = "Sim, é verdade, você achou o número premiado!"
+               se não, mostre "Infelizmente você perdeu"
+           **/
+
+            /** COMENTÁRIO DA QUESTÃO
 
             Console.WriteLine("\nATIVIDADE 3: Multiplicar 3 números para tentar tirar o número premiado" +
                 "\nDigite o primeiro número");
@@ -91,6 +97,8 @@ namespace ConstruDelasConsole
                 caso não for nenhum, mostre "Opção inválida."
             **/
 
+            /** COMENTÁRIO DA QUESTÃO
+
             Console.WriteLine("\nATIVIDADE 4: Colocar Leo, Dirceu ou Thais" +
                 "\nDigite o seu nome");
             nome = Console.ReadLine().ToLower();
@@ -118,6 +126,8 @@ namespace ConstruDelasConsole
                 calcular. o resultado final é para mostrar exemplo X * Y = ZZ para todos os números
             **/
 
+            /** COMENTÁRIO DA QUESTÃO
+
             Console.WriteLine("\nATIVIDADE 5: Calcular a tabuada de qualquer número em qualquer quantidade" +
                 "\nDigite o número que você quer multiplicar");
             var tabuada = int.Parse(Console.ReadLine());
@@ -139,6 +149,8 @@ namespace ConstruDelasConsole
              * no final do programa, mostre um relatório da seguinte forma:
              * Aluno: xxx, média: ?, notas: (?,?,?,?), Status: Aprovado ou Reprovado (aprovado média > 5)
             **/
+
+            /** COMENTÁRIO DA QUESTÃO
 
             List<dynamic> alunos = new List<dynamic>();
 
@@ -192,6 +204,8 @@ namespace ConstruDelasConsole
                 Quantidade XXX, Produto: XXX, Será entregue no endereço XXX
             **/
 
+            /** COMENTÁRIO DA QUESTÃO
+
             Console.WriteLine("\nATIVIDADE 7: Programa para venda de produtos");
 
             Console.WriteLine("Digite o produto que você selecionou:");
@@ -225,7 +239,7 @@ namespace ConstruDelasConsole
                     ValorTotal = int.Parse(quantidadeProduto) * Convert.ToDouble(valorProduto)
              };
 
-            Console.WriteLine($"Olá, {pedido.Cliente.Nome}, o valor total de seu pedido é de R$ {pedido.ValorTotal}" +
+            Console.WriteLine($"Olá, {pedido.Cliente.Nome}, o valor total de seu pedido é de R$ {pedido.ValorTotal.ToString("#.##")}" +
                 $"\ne os produtos são: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
                 $"\ncom o preço de R$ {pedido.Produto.Valor}. Seu pedido será entregue no endereço {pedido.Cliente.Endereco}.");
 
@@ -243,8 +257,51 @@ namespace ConstruDelasConsole
 
             Console.WriteLine("\nATIVIDADE 8: Programa para venda de produtos com 5 clientes");
 
+            List<Pedido> pedidos = new List<Pedido>();
+            for (var contador = 0; contador <= 5; contador++)
+            {
+                Console.WriteLine("\nDigite o produto que você selecionou:");
+                string nomeProduto = Console.ReadLine();
 
+                Console.WriteLine("\nDigite o valor desse produto:");
+                var valorProduto = Console.ReadLine();
 
+                Console.WriteLine("\nDigite a quantidade desse produto:");
+                var quantidadeProduto = Console.ReadLine();
+
+                Console.WriteLine("\nDigite o seu nome:");
+                string nomeDoCliente = Console.ReadLine();
+
+                Console.WriteLine("\nDigite o seu endereço:");
+                string enderecoDoCliente = Console.ReadLine();
+
+                Pedido pedido = new Pedido()
+                {
+                    Produto = new Produto()
+                    {
+                        Nome = nomeProduto,
+                        Valor = Convert.ToDouble(valorProduto)
+                    },
+                    Cliente = new Cliente()
+                    {
+                        Nome = nomeDoCliente,
+                        Endereco = enderecoDoCliente,
+                    },
+                    Quantidade = int.Parse(quantidadeProduto),
+                    ValorTotal = int.Parse(quantidadeProduto) * Convert.ToDouble(valorProduto)
+                };
+
+                pedidos.Add(pedido);
+            }
+
+            foreach (var pedido in pedidos)
+            {
+                Console.WriteLine($"\nOlá, {pedido.Cliente.Nome}, o valor total de seu pedido é de R$ {pedido.ValorTotal.ToString("#.##")}" +
+                $"\ne os produtos são: {pedido.Produto.Nome}, em quantidade {pedido.Quantidade}, " +
+                $"\ncom o preço de R$ {pedido.Produto.Valor}. Seu pedido será entregue no endereço {pedido.Cliente.Endereco}.");
+
+                Console.WriteLine($"-----------------------------------------");
+            }
         }
     }
 }
